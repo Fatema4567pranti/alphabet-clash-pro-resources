@@ -34,12 +34,32 @@ function handleKeybordKeyUpEvent(event){
     //check matched or not
      if(playerPress === expectedAlphabet){
          console.log('you get a point!');
-         console.log('you have press correctly', expectedAlphabet);
+      // console.log('you have press correctly', expectedAlphabet);
+        //  update score
+        // 1. get the current score
+          const currentScoreElement = document.getElementById('current-score');
+          const currentScoreText = currentScoreElement.innerText;
+          const currentScore = parseInt(currentScoreText);
+          console.log(currentScore);
+        // 2. increase the current score
+        const newScore = currentScore + 1; 
+        // 3. show the updated score
+        currentScoreElement.innerText = newScore;
+        // start a new round
+        
          removeBackgroundColorById(expectedAlphabet);
          continueGame();
      }
      else{
          console.log('you missed. you lost a life');
+         //step-1: get the current Life number
+          const currentLifeElement = document.getElementById('current-life');
+          const currentLifeText = currentLifeElement.innerText;
+          const currentLife = parseInt(currentLifeText);
+         //step-2: reduce the Life count
+          const newLife = currentLife - 1;
+         //spet-3: display the updated Life count
+         currentLifeElement.innerText = newLife;
      }
 }
 //capture keybord key press
