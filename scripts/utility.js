@@ -18,19 +18,37 @@ function setBackgroundColorById(elementId){
      element.classList.remove('bg-orange-400');
  }
 
-function getARandomAlphabet(){
-    //get creat a alphabet array
-    const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
-    const alphabets = alphabetString.split('');
-    //console.log(alphabets);
+ function getTextElementValueById(elementId){
+    const element = document.getElementById(elementId);
+    const elementValueText = element.innerText;
+    const value = parseInt(elementValueText);
+    return value;
+ }
 
-    //get a random index between 0-25
-    const randomNumber = Math.random() *25;
-    const index = Math.round(randomNumber);
+ function setTextElementValueById(elementId, value){
+    const element = document.getElementById(elementId);
+    element.innerText = value;
+ }
 
-    const alphabet = alphabets[index];
-    //console.log(index, alphabet);
-    return alphabet;
+ function getElementTextById(elementId){
+    const element = document.getElementById(elementId);
+    const text = element.innerText;
+    return text;
+ }
+
+ function getARandomAlphabet(){
+     //get creat a alphabet array
+     const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
+     const alphabets = alphabetString.split('');
+     //console.log(alphabets);
+
+     //get a random index between 0-25
+     const randomNumber = Math.random() *25;
+     const index = Math.round(randomNumber);
+
+     const alphabet = alphabets[index];
+     //console.log(index, alphabet);
+     return alphabet;
 
 
-}
+ }
